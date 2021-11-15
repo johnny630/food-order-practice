@@ -1,5 +1,5 @@
 import React from 'react';
-import CartContext from './CartContext';
+import CartContext from './cart-context';
 
 const CartProvider = (props) => {
   const addItemToCartHandler = (item) => {};
@@ -7,7 +7,7 @@ const CartProvider = (props) => {
   const removeItemFromCartHandler = (id) => {};
 
   const cartInitValue = {
-    item: [],
+    items: [],
     amount: 0,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
@@ -15,7 +15,7 @@ const CartProvider = (props) => {
 
   return (
     <CartContext.Provider value={cartInitValue}>
-      props.children
+      {props.children}
     </CartContext.Provider>
   );
 };
